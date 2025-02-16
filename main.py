@@ -40,6 +40,14 @@ def dict_to_list(dict):
     return dict_list
 
 dict_list = dict_to_list(sorted_dict)
+
+def sort_on(dict):
+    return dict.values()
+
+sort_key = sort_on(dict_list)
+
+dict_list.sort(reverse= True, key= sort_key)
+
         
     
     
