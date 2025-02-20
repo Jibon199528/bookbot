@@ -36,7 +36,7 @@ sorted_dict = sort_dict(number_letters)
 def dict_to_list(dict):
     dict_list = []
     for pair in dict:
-        dict_list.append({pair: dict[pair],num: dict[pair]})
+        dict_list.append({"name": pair,"num": dict[pair]})
     return dict_list
 
 dict_list = dict_to_list(sorted_dict)
@@ -44,15 +44,21 @@ dict_list = dict_to_list(sorted_dict)
 def sort_on(dict):
     return dict["num"]
 
-sort_key = sort_on(dict_list)
 
-dict_list.sort(reverse= True, key= sort_key)
 
-        
+dict_list.sort(reverse= True, key=sort_on)
+
+
+def report():
+    print(f"--- Begin report of books/frankenstein.txt ---")
     
-    
-    
-print(dict_list)
+    print(f"{number_words} words found in the dokument")
+    print(" ")
+    for dict in dict_list:
+        print(f"The '{dict["name"]}' character was found {dict["num"]} times")
+    print("--- End report ---")
+
+report()
     
 
 
